@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Download and Animate</string>
+    <string name="app_description">Download files from Internet</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string name="notification_title">Udacity: Android Kotlin Nanodegree </string>
+    <string name="notification_description">The Project 3 repository is downloaded</string>
+    <string name="notification_button">See changes</string>
+
+    <string name="button_name">Click me</string>
+    <string name="button_loading">We are loading </string>
+    <string name="title_activity_detail">DetailActivity</string>
+
+    <string name="glide_url1">Glide- Image Loading Library by BumpTech</string>
+    <string name="load_app_url2">Load App - Current repository by Udacity</string>
+    <string name="retrofit_url3">Retrofit - Type-Safe HTTP client for Android and Java by Square, Inc</string>
+    <string name="file_name">File name:</string>
+    <string name="success">Success</string>
+    <string name="failure">Failure</string>
+    <string name="status">Status:</string>
+    <string name="an_image_with_a_download_sign_on_it">An image with a download sign on it</string>
+    <string name="download">Download</string>
+    <string name="downloading">Downloading…</string>
+    <string name="download_notification_channel_id">download_channel</string>
+    <string name="download_is_ready">The .... missing info .... file is downloaded</string>
+    <string name="download_notification_channel_description">Download is ready</string>
+    <string name="download_notification_channel_name">Download</string>
+    <string name="a_button_that_should_send_mail_but_not_activated_at_the_moment">A button that should send mail but not activated at the moment</string>
+
+</resources>

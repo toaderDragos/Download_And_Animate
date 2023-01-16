@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DetailActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        android:contentDescription="@string/a_button_that_should_send_mail_but_not_activated_at_the_moment" />
+
+    <TextView
+        android:id="@+id/url"
+        style="@style/detail_text_style"
+        android:text="@string/glide_url1"
+        />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/detail_text_style"
+        android:textColor="@color/grey1"
+        android:layout_marginStart="20dp"
+        android:text="@string/file_name" />
+
+    <TextView
+        android:id="@+id/textView5"
+        style="@style/detail_text_style"
+        android:textColor="@color/grey1"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="250dp"
+        android:text="@string/status" />
+
+    <TextView
+        android:id="@+id/success"
+        android:text="@string/success"
+        android:textColor="@color/grey1"
+        style="@style/detail_text_style"
+        android:layout_marginTop="250dp" />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
