@@ -28,9 +28,6 @@ class MainActivity : AppCompatActivity() {
     private var downloadID: Long = 0
     private var chosenUrl: String = ""
 
-//    private lateinit var notificationManager: NotificationManager
-//    private lateinit var pendingIntent: PendingIntent
-//    private lateinit var action: NotificationCompat.Action
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,7 +43,6 @@ class MainActivity : AppCompatActivity() {
         registerReceiver(receiver, IntentFilter(DownloadManager.ACTION_DOWNLOAD_COMPLETE))
 
         val toastText = Toast.makeText(this, "Please select a file to download!", Toast.LENGTH_SHORT)
-        toastText.setGravity(0, 0, -140)
         toastText.show()
 
         // here was the custom buttoin clicklistener - remake it into a nice function
@@ -76,15 +72,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun helperFunction(radioButtonLoad: RadioButton, url: String, txtOnProgressBar: TextView) {
-        download(url)
         radioButtonLoad.isChecked = false
         custom_button.changeButtonStateinMAinActivity(ButtonState.Loading)
         txtOnProgressBar.setText(getString(R.string.downloading))
         when (url) {
             URL_LOAD -> chosenUrl = "Load App Repository"
             URL_GLIDE -> chosenUrl = "Glide Image Loading Library"
-            URL_RETRO -> chosenUrl = "Retrofit HTTP Client"
+            URL_RETRO -> chosenUrl = "Type-safe Retrofit HTTP Client"
         }
+        download(url)
     }
 
     private val receiver = object : BroadcastReceiver() {
@@ -108,7 +104,7 @@ class MainActivity : AppCompatActivity() {
                 val c: Cursor?
                 val downloadManager: DownloadManager?
                 val chosenTitle: String
-                var successState: String = "Error"
+                var successState = "Error"
 
                 downloadManager = getSystemService(DOWNLOAD_SERVICE) as DownloadManager
                 query = DownloadManager.Query()
@@ -172,7 +168,7 @@ class MainActivity : AppCompatActivity() {
     private fun download(URL: String) {
         val request =
             DownloadManager.Request(Uri.parse(URL))
-                .setTitle(getString(R.string.app_name))
+                .setTitle(chosenUrl)
                 .setDescription(getString(R.string.app_description))
                 .setRequiresCharging(false)
                 .setAllowedOverMetered(true)
@@ -187,9 +183,8 @@ class MainActivity : AppCompatActivity() {
             "https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter/archive/master.zip"
         private const val URL_GLIDE = "https://github.com/bumptech/glide/archive/refs/heads/master.zip"
         private const val URL_RETRO = "https://github.com/square/retrofit/archive/refs/heads/master.zip"
-        private const val CHANNEL_ID = "channelId"
+//        private const val CHANNEL_ID = "channelId"
     }
 
-//    TO DO display a toast message to let the user know he has to choose an option
 
 }
