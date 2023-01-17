@@ -62,12 +62,6 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         .setStyle(bigPicStyle)  // add style to builder - does not work at this moment
         .setLargeIcon(bitmap)
         .addAction(R.drawable.ic_baseline_lightbulb_24, "Check the status", contentPendingIntent)
-
-//        .addAction(
-//            R.drawable.egg_icon,
-//            applicationContext.getString(R.string.snooze),
-//            snoozePendingIntent
-//        )
         .setPriority(NotificationCompat.PRIORITY_HIGH)
 
     notify(NOTIFICATION_ID, builder.build())

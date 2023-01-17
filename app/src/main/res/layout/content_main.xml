@@ -5,6 +5,7 @@
     android:id="@+id/main_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:contentDescription="@string/a_button2"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
@@ -19,6 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/a_button"
         app:layout_constraintVertical_bias="0.98" />
 
 
@@ -60,21 +62,11 @@
         android:layout_width="0dp"
         android:layout_height="180dp"
         android:background="#003D4B"
+        android:contentDescription="@string/an_image_with_a_download_sign_on_it"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_baseline_cloud_download_24"
-        android:contentDescription="@string/an_image_with_a_download_sign_on_it" />
-
-    <Button
-        android:id="@+id/dra_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+        app:srcCompat="@drawable/ic_baseline_cloud_download_24" />
 
     <TextView
         android:id="@+id/download_text"

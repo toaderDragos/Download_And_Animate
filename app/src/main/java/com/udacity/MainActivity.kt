@@ -45,23 +45,22 @@ class MainActivity : AppCompatActivity() {
         val toastText = Toast.makeText(this, "Please select a file to download!", Toast.LENGTH_SHORT)
         toastText.show()
 
-        // here was the custom buttoin clicklistener - remake it into a nice function
         // don't confuse isActivated with isChecked
         custom_button.setOnClickListener {
             if (radioButtonLoad.isChecked) {
                 helperFunction(radioButtonLoad, URL_LOAD, downloadTextOnProgressBar)
 
-            } else if (radioButtonGlide.isChecked){
+            } else if (radioButtonGlide.isChecked) {
                 helperFunction(radioButtonGlide, URL_GLIDE, downloadTextOnProgressBar)
 
-            } else if (radioButtonRetrofit.isChecked){
+            } else if (radioButtonRetrofit.isChecked) {
                 helperFunction(radioButtonRetrofit, URL_RETRO, downloadTextOnProgressBar)
 
             } else {
                 Toast.makeText(this, "Choose an option", Toast.LENGTH_SHORT).show()
             }
-        //      We don't implement this here - the completed function -  because it didn't finish downloading yet
-        //      custom_button.changeButtonStateinMAinActivity(ButtonState.Completed)
+            //      We don't implement here - the completed function -  because it didn't finish downloading yet
+            //      custom_button.changeButtonStateinMAinActivity(ButtonState.Completed)
         }
 
         // A channel for the notification
@@ -88,7 +87,6 @@ class MainActivity : AppCompatActivity() {
             val id = intent?.getLongExtra(DownloadManager.EXTRA_DOWNLOAD_ID, -1)
             Log.i("dra", "what is in id:${id}")
             if (id == downloadID) {
-
 
                 // changing the displayed text
                 val downloadTextOnProgressBar: TextView = findViewById(R.id.download_text)
@@ -181,10 +179,18 @@ class MainActivity : AppCompatActivity() {
     companion object {
         private const val URL_LOAD =
             "https://github.com/udacity/nd940-c3-advanced-android-programming-project-starter/archive/master.zip"
-        private const val URL_GLIDE = "https://github.com/bumptech/glide/archive/refs/heads/master.zip"
-        private const val URL_RETRO = "https://github.com/square/retrofit/archive/refs/heads/master.zip"
+        private const val URL_GLIDE =
+            "https://github.com/bumptech/glide/archive/refs/heads/master.zip"
+        private const val URL_RETRO =
+            "https://github.com/square/retrofit/archive/refs/heads/master.zip"
 //        private const val CHANNEL_ID = "channelId"
     }
 
+    // The receiver should be unregistered when no longer need it or the context is no longer valid because if not,
+    // the Android system can report a leaked broadcast receiver error.
+    override fun onDestroy() {
+        super.onDestroy()
+        unregisterReceiver(receiver)
+    }
 
 }

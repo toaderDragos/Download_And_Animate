@@ -20,15 +20,6 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email"
-        android:contentDescription="@string/a_button_that_should_send_mail_but_not_activated_at_the_moment" />
-
     <TextView
         android:id="@+id/url"
         style="@style/detail_text_style"
@@ -57,5 +48,5 @@
         style="@style/detail_text_style"
         android:layout_marginTop="250dp" />
 
-
+    <include layout="@layout/content_detail" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

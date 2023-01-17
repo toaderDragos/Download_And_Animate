@@ -27,5 +27,9 @@
     <string name="download_notification_channel_description">Download is ready</string>
     <string name="download_notification_channel_name">Download</string>
     <string name="a_button_that_should_send_mail_but_not_activated_at_the_moment">A button that should send mail but not activated at the moment</string>
+    <string name="a_button">a button</string>
+    <string name="ok">OK</string>
+    <string name="ok2">OK</string>
+    <string name="a_button2">a button</string>
 
 </resources>
